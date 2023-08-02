@@ -1,10 +1,7 @@
-import React from "react";
-import { useParams } from "react-router";
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-function Logements({ logementtitle, cover, logementpicture, label, hosttitle, hostpicture }) {
-  const { logementNumber } = useParams()
+function Card({ logementtitle, cover, logementpicture, label, hosttitle, hostpicture }) {
   const CardLabel = styled.span`
   color: #5843e4;
   font-size: 22px;
@@ -23,8 +20,6 @@ function Logements({ logementtitle, cover, logementpicture, label, hosttitle, ho
     `
   return (
     <div style={{ display: 'flex', flexDirection: 'column', padding: 15 }}>
-      <h1>Logements</h1>
-      <h2>Logement {logementNumber}</h2>
       <CardInfo>
         <img src={cover} alt="photologement" height={80} width={80} />
         <span>{logementtitle}</span>
@@ -40,7 +35,7 @@ function Logements({ logementtitle, cover, logementpicture, label, hosttitle, ho
   )
 }
 
-Logements.propTypes = {
+Card.propTypes = {
   logementtitle: PropTypes.string,
   cover: PropTypes.string,
   logementpicture: PropTypes.string,
@@ -49,4 +44,6 @@ Logements.propTypes = {
   hostpicture: PropTypes.string
 }
 
-export default Logements
+
+
+export default Card
