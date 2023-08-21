@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../Assets/Logo.png'
+import colors from "../../Utils/style/colors"
 
 
 const StyledLink = styled(Link)`
     padding: 15px;
-    color: #FF6060;
+    color: ${colors.primary};
     text-decoration: none;
     font-size: 24px;
-    color: #FF6060;
     font-weight: 500;
-    font-family: Montserrat; /*permettre que ca saffiche*/
     &:hover {
       cursor: pointer;
       border-bottom: solid 2px;

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components'
+import colors from "../../Utils/style/colors"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
 
 const Text = styled.div`
-font-family: Montserrat;
 font-size: 24px;
 font-weight: 400;
 line-height: 34px;
@@ -10,20 +14,26 @@ letter-spacing: 0em;
 text-align: left;
 `
 const TitleText = styled.h3`
-font-family: Montserrat;
 font-size: 24px;
 font-weight: 500;
 line-height: 34px;
 letter-spacing: 0em;
 text-align: left;
-color: {colors.primary}
+color: ${colors.primary}
 `
 
 
 function Propos() {
+
+  const [isOpen, setOpen] = useState(true);
   return (
     <div>
-      <TitleText>Fiabilité</TitleText>
+      <div>
+
+        <TitleText onClick={() => setOpen(!isOpen)}>Fiabilité
+        </TitleText>
+        <FontAwesomeIcon onClick={() => setOpen(!isOpen)} icon="fa-duotone fa-chevron-down" />
+      </div>
       <Text>
         Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.
       </Text>

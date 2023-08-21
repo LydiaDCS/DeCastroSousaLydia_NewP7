@@ -22,13 +22,9 @@ margin:0;
   margin-bottom: 20px;
 `
   const Footertext = styled.p`
-
 width: 400px;
 height: auto;
-
-
 color: #FFFFFF;
-font-family: Montserrat;
 font-size: 24px;
 font-style: normal;
 font-weight: 500;

@@ -1,28 +1,25 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { styled } from "styled-components"
+import colors from "../../Utils/style/colors"
 
 const StyledLink = styled(Link)`
     padding: 15px;
-    color: #FF6060;
+    color: ${colors.primary};
     text-decoration: none;
     font-size: 24px;
-    color: #FF6060;
     font-weight: 500;
-    font-family: Montserrat; /*permettre que ca saffiche*/
     &:hover {
       cursor: pointer;
       border-bottom: solid 2px;
   }`
 
 const ErrorNumber = styled.h1`
-font-family: Montserrat;
 font-size: 288px;
 font-weight: 700;
 margin:50px;
 `
 const TextError = styled.h3`
-font-family: Montserrat;
 font-size: 36px;
 font-weight: 500;
 padding-bottom: 150px;
@@ -30,7 +27,7 @@ padding-bottom: 150px;
 const BodyError = styled.div`
 letter-spacing: 0em;
 text-align: center;
-color: #FF6060;
+color: ${colors.primary};
 padding-bottom: 100px;
 `
 

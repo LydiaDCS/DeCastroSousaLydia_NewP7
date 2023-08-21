@@ -1,48 +1,37 @@
+import { Component } from "react";
+import LogementContainer from "../../components/LogementContainer";
 
 
+class logement extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      logementData: {},
+    }
+  }
 
+  componentDidMount() {
+    const { id } = this.props
 
-/*import Card from "../../components/Cards";
-import logementsCards from "../Home/index"*/
-
-function logement() {
-
-  /*const { logementId } = useParams()*/
-  /*const DisplayLogement = logementsCards.filter(item => item.id)
-  
-  const [logement, setLogement] = useState({ data: [] });
-  useEffect(() => {
-    fetch(`http://localhost:3000/${logementId}`)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
+    fetch(`http://localhost:3000/logement?id=${id}`)
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        this.setState({ logementData: jsonResponse?.logementData })
       })
-      .then((data) => {
-        setLogement(logement);
-        console.log(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("Ce logement n'existe pas");
-      });
-  })*/
-  return (
-    <div>
-      <body>
+  }
 
-        <div>
-          <h1> logement </h1>
-          ;
-        </div>
-      </body>
+  render() {
+    const { id } = this.props
+    const { logementData } = this.state
+    const {
+
+      description
+    } = logementData
+    return <div>
+      <LogementContainer Logement={id} description={description} />
     </div>
-
-  )
+  }
 }
-
-
-
 
 export default logement
