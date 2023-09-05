@@ -1,37 +1,55 @@
-import { Component } from "react";
-import LogementContainer from "../../components/LogementContainer";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { logementsCards } from "../../Données"
+import LogementItem from "../../components/LogementItem";
 
+/*
+<FontAwesomeIcon icon="fa-duotone fa-chevron-up" />
+<FontAwesomeIcon icon="fa-duotone fa-chevron-down" />
+<FontAwesomeIcon icon="fa-duotone fa-star" />*/
+function Logement() {
 
-class logement extends Component {
+  const { id: queryId } = useParams()
+  const [logementData, setLogementData] = useState({})
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      logementData: {},
-    }
-  }
-
-  componentDidMount() {
-    const { id } = this.props
-
-    fetch(`http://localhost:3000/logement?id=${id}`)
+  useEffect(() => {
+    fetch(`http://localhost:3000/logement?id=${queryId}`)
       .then((response) => response.json())
       .then((jsonResponse) => {
-        this.setState({ logementData: jsonResponse?.logementData })
+        setLogementData(jsonResponse?.logementsCards)
       })
-  }
+  }, [queryId])
 
-  render() {
-    const { id } = this.props
-    const { logementData } = this.state
     const {
+    id,
+    title,
+    cover,
+    sun,
+    water
+  } = logementData
 
-      description
-    } = logementData
-    return <div>
-      <LogementContainer Logement={id} description={description} />
+  return (
+    <div>
+      <div>
+        {logementsCards.map(({ id, title, cover, sun, water }) => (
+          <LogementItem
+            id={queryId}
+            cover={cover}
+            title={title}
+            sun={sun}
+            water={water}
+
+          />
+        ))}
+      </div>
+      <h1>title: {title}</h1>
+      <h1>logement: {id}</h1>
+      <h3>description: {cover}</h3>
+      <h3>star: {sun}</h3>
+      <h3>star: {water}</h3>
     </div>
-  }
+  )
 }
 
-export default logement
+
+export default Logement

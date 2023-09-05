@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../../components/Cards";
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
+import StarNotation from "../../components/StarsNotation";
 
 function Logements() {
   const logementsCards = [
@@ -682,6 +683,8 @@ function Logements() {
               key={`${logement.id}-${index}`}
               logementtitle={logement.title}
             />
+              <StarNotation noteType='light' noteValue={logement.YellowStar} />
+              <StarNotation noteType='dark' noteValue={logement.WhiteStar} />
             </Link>
           ))}
         </CardLogement>
