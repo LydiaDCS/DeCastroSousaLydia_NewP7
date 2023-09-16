@@ -17,8 +17,7 @@ function Card({ logementtitle }) {
   transition-duration: 0.1s;
     &:hover {
         cursor: pointer;
-        transform: scale(1.02);
-        
+        transform: scale(1.02);  
     }
     `
   const CardText = styled.span`
@@ -44,9 +43,6 @@ function Card({ logementtitle }) {
 
 Card.propTypes = {
   logementtitle: PropTypes.string,
-
 }
-
-
 
 export default Card

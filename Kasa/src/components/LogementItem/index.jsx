@@ -1,14 +1,13 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faStar } from "@fortawesome/free-solid-svg-icons"
 
-import StarNotation from "../StarsNotation";
-
-
-function LogementItem({ id, cover, title, sun, water }) {
+function LogementItem({ id, cover, title, description }) {
   return (
     <li key={id} >
       <img src={cover} alt={`${title} cover`} />
       {title}
-      <StarNotation noteType='light' noteValue={sun} />
-      <StarNotation noteType='dark' noteValue={water} />
+      <div>{description}</div>
+      <FontAwesomeIcon icon={faStar} />
     </li>
   )
 }

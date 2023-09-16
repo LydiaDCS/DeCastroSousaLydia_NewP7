@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import styled from 'styled-components'
 import colors from "../../Utils/style/colors"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons"
+/*import { faChevronDown } from "@fortawesome/free-solid-svg-icons"*/
 
 const Text = styled.div`
 font-size: 24px;
@@ -31,38 +33,53 @@ margin: 0px  0px 0px -10px;
 const Block = styled.div`
 padding: 10%;
 `
-
+/*utiliser componentwillunmount ?*/
 function Propos() {
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
-  return isOpen ? (
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
     <div>
       <Block>
-        <Text>
-          <TitleText onClick={() => setIsOpen(false)}>Fiabilité
+
+        <TitleText onClick={handleClick}>Fiabilité <FontAwesomeIcon icon={faChevronUp} />
         </TitleText>
-          <FontAwesomeIcon onClick={() => setIsOpen(false)} icon="fa-duotone fa-chevron-down" />
-        Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.
-        </Text>
-        <Text>
-          <TitleText onClick={() => setIsOpen(false)}>Respect</TitleText>
+
+        {isOpen && (
+          <Text >
+            Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.
+          </Text>
+        )}
+
+
+        <TitleText onClick={handleClick}>Respect</TitleText>
+        {isOpen && (
+          <Text >
         La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.
         </Text>
-        <Text>
-          <TitleText onClick={() => setIsOpen(false)}>Service</TitleText>
+        )}
+
+        <TitleText onClick={handleClick}>Service</TitleText>
+        {isOpen && (
+          <Text >
         Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.
         </Text>
-        <Text>
-          <TitleText onClick={() => setIsOpen(false)}>Sécurité</TitleText>
+        )}
+
+
+        <TitleText onClick={handleClick}>Sécurité</TitleText>
+        {isOpen && (
+          <Text >
         La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.
-      </Text>
+          </Text>
+        )}
       </Block>
     </div>
-  ) : (<TitleText onClick={() => setIsOpen(true)}>Fiabilité
-  </TitleText>)
-
-
+  )
 }
 
 export default Propos
