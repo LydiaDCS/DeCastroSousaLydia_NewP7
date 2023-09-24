@@ -7,22 +7,25 @@
     color: #fff;
     width: 100%;
     margin-top: auto;
-    h2 {
+    h1 {
         display: flex;
         flex-direction: row;
-        font-style: Medium;
-        Font-size: 1.5em;
         letter-spacing: 10%;
         color: #fff;
-        .kasaIconBlanc {
+        .kasaLogoFooter {
             filter: brightness(100);
-            height: 1em;
+            padding-top: 20px;
             width: auto;
+            height: 40px;
         }
     }
     p {
-        font-style: Medium;
-        Font-size: 0.5em;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: center;
+        padding-bottom: 20px;
     }
 }
 

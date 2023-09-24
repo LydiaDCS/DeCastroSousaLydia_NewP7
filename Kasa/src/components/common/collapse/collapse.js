@@ -4,8 +4,7 @@ import arrow from '../../../assets/prev.svg';
 
 /**
 La fonction Collapse est un composant qui représente une section de texte qui peut être réduite ou agrandie en cliquant sur un bouton (ici arrow).
-@param {*} props - les propriétés passées au composant, qui contiennent le titre et le contenu de la section.
-@returns - le composant Collapse qui affiche le titre et le contenu de la section, ainsi qu'un bouton type open/close pour réduire ou agrandir la section.
+False car la section de texte est fermée par default
 */
 function Collapse(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +14,7 @@ function Collapse(props) {
     setIsOpen(!isOpen);
   }
 
-  // Définition de la classe CSS en fonction de l'état d'ouverture ou de fermeture du composant
+  // Définition de la classe CSS en fonction de l'état d'ouverture ou de fermeture du composant / utilisation du ternaire
   const arrowClassName = isOpen ? 'collapse__arrow arrow-open' : 'collapse__arrow arrow-closed';
   const collapsClassName = isOpen ? 'collapseText__box box-open' : 'collapseText__box box-closed';
 

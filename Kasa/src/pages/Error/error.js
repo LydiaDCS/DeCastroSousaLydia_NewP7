@@ -5,7 +5,6 @@ import "./error.scss"
 /**
 La fonction Error est un composant React qui est rendu lorsqu'une route demandée n'existe pas.
 Elle affiche un message d'erreur 404 et une invite à retourner à la page d'accueil.
-@returns le contenu du composant Error
 */
 
 function Error() {

@@ -7,7 +7,6 @@ import dataCards from "../../data/data";
 /**
 La fonction Home est un composant qui représente la page d'accueil de l'application.
 Elle affiche une bannière avec une citation et une image, ainsi qu'une liste de biens immobiliers disponibles.
-@returns le contenu du composant Home
 */
 function Home() {
   return (

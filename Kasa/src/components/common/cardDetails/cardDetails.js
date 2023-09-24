@@ -4,69 +4,66 @@ import './cardDetails.scss';
 import renderStars from "../renderStars/renderStars";
 import Carousel from "../carousel/carousel";
 import Collapse from "../collapse/collapse";
-import { useLocation, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 
 /**
  * Cette fonction affiche les détails d'une carte de location de manière détaillée.
- * Elle récupère l'identifiant du lot à afficher à partir de l'URL grâce à `useParams()`.
- * Elle recherche ensuite les informations du lot correspondant dans `lotsData`.
- * Si le lot est trouvé, elle affiche toutes les informations du lot : une galerie d'images, le titre et l'emplacement du lot, le nom et la photo de l'hôte, la note du lot, une liste de tags associés, une section avec une description détaillée et une liste d'équipements.
- * Sinon, elle redirige vers la page NotFound.
- * @returns Le contenu de la page détaillée d'un lot en fonction de son id.
+ * Elle récupère l'identifiant du log à afficher à partir de l'URL grâce à `useParams()`.
+ * Elle recherche ensuite les informations du log correspondant dans `dataCards`.
+ * Si le log est trouvé, elle affiche toutes les informations du log : une galerie d'images, le titre et l'emplacement du log, le nom et la photo de l'hôte, la note du log, une liste de tags associés, une section avec une description détaillée et une liste d'équipements.
+ * Sinon, elle redirige vers la page Error.
+ * @returns Le contenu de la page détaillée d'un log en fonction de son id.
  */
 function CardsDetails() {
-  // Récupère l'ID du lot à afficher à partir de l'URL
+  // Récupère l'ID du log à afficher à partir de l'URL
   const { id } = useParams();
 
-  // Recherche les informations du lot correspondant dans `lotsData`
-  const lot = dataCards.find((lot) => lot.id === id);
-
-  // Récupère l'objet `location` pour récupérer l'URL courante
-  const location = useLocation();
+  // Recherche les informations du log correspondant dans `dataCards`
+  const log = dataCards.find((log) => log.id === id);
 
   // Récupère l'objet `history` pour naviguer vers une autre page en cas d'erreur
   const history = useNavigate();
 
-  // Vérifie si le lot est valide et sinon, redirige l'utilisateur vers la page NotFound
+  // Vérifie si le log est valide et sinon, redirige l'utilisateur vers la page Error
   useEffect(() => {
-    if (!lot) {
-      history(`/error?from=${location.pathname}`);
+    if (!log) {
+      history(`/error`);
     }
-  }, [history, location.pathname, lot]);
+  }, [history, log]);
 
-  // Si le lot est valide, affiche toutes les informations sur la page détaillée
-  if (lot) {
+  // Si le log est valide, affiche toutes les informations sur la page détaillée
+  if (log) {
     return (
       <article className="card-details">
-        <Carousel images={lot.pictures} />
+        <Carousel images={log.pictures} />
         <section className="title-location-host-rating">
           <div className="title-location">
-            <h2 className="lots-title">{lot.title}</h2>
-            <div className="lots-location">{lot.location}</div>
+            <h2 className="logs-title">{log.title}</h2>
+            <div className="logs-location">{log.location}</div>
           </div>
           <div className="host-rating">
-            <div className="lots-host">
-              <p className="host-name">{lot.host.name}</p>
-              <img className="host-picture" src={lot.host.picture} alt={lot.host.name} />
+            <div className="logs-host">
+              <p className="host-name">{log.host.name}</p>
+              <img className="host-picture" src={log.host.picture} alt={log.host.name} />
             </div>
-            <div className="rating"> {renderStars(lot.rating)}</div>
+            <div className="rating"> {renderStars(log.rating)}</div>
           </div>
         </section>
-        <div className="lots-tags">{
-          lot.tags.map((tags) =>
+        <div className="logs-tags">{
+          log.tags.map((tags) =>
             <button key={tags}>{tags}</button>)
         }</div>
         <section className="homeCollapse">
 
-          <div className="lots-description">
+          <div className="logs-description">
             <Collapse title="Description">
-              <p>{lot.description}</p>
+              <p>{log.description}</p>
             </Collapse>
           </div>
-          <div className="lots-equipements">
-            <Collapse title="Equipements">{lot.equipments.map((equipement) =>
+          <div className="logs-equipements">
+            <Collapse title="Equipements">{log.equipments.map((equipement) =>
               <li key={equipement}>{equipement}</li>)}
             </Collapse>
           </div>

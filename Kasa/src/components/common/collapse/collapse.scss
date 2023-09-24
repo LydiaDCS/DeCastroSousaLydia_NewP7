@@ -33,7 +33,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 1em;
-        border-radius: 5px;
+        border-radius: 0px 0px 10px 10px;
         padding-block: 2%;
         &.box-open {
             background-color: #f6f6f6;
@@ -56,7 +56,7 @@
     align-items: center;
     width: 100%;
     background-color: #f6f6f6;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
     border: none;
     outline: none;

@@ -4,14 +4,13 @@ import './header.scss'
 
 /**
 La fonction Header est un composant qui représente l'en-tête de l'application.
-Elle affiche le logo de Kasa et des liens de navigation vers la page "d'accueil" (Home.js) et la page "A propos" (About.js).
-@returns le contenu du composant Header
+Elle affiche le logo de Kasa et des liens de navigation vers la page "d'accueil" (home.js) et la page "A propos" (about.js).
 */
 
 function Header() {
   return (
-    <span className='Header'>
-      <img src={logo} alt='icon kasa' className='kasaIcon' />
+    <div className='Header'>
+      <img src={logo} alt='icon kasa' className='kasaLogo' />
       <nav className='navigationLink'>
         <ul>
           <li>
@@ -22,7 +21,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </span>
+    </div>
   )
 }
 
