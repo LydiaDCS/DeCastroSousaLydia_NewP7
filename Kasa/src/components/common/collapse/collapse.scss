@@ -13,22 +13,28 @@
         background-color: #FF6060;
         color: #fff;
         border: none;
-        &.arrow-open {
-            background-color: #FF6060;
-            img {
-                transform: rotate(90deg);
-                max-height: 15px;
-            }
-        }
-        &.arrow-closed {
-            transform: rotate(0deg);
-            img {
-                transform: rotate(-90deg);
-                max-height: 15px;
-            }
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .arrow-open {
+        background-color: #FF6060;
+        img {
+            transform: rotate(90deg);
+            max-height: 15px;
         }
     }
-    .collapseText__box {
+    .arrow-closed {
+        img {
+            transform: rotate(-90deg);
+            max-height: 15px;
+        }
+    }
+    img {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s;
+    }
+    .collapseText__ {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 400;
@@ -47,36 +53,13 @@
             padding-left: 3%;
             padding-right: 3%;
         }
+        &.box-closed {
+            display: none;
+            height: 0;
+            overflow: hidden;
+            transition: height 5.5s ease-in-out;
+        }
     }
-}
-
-.collapse__arrow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: #f6f6f6;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 10px;
-    h3 {
-        margin: 0;
-    }
-    img {
-        width: 20px;
-        height: 20px;
-        transition: transform 0.3s ease-in-out;
-    }
-}
-
-.box-closed {
-    display: none;
-    height: 0;
-    overflow: hidden;
-    transition: height 5.5s ease-in-out;
 }
 
 .box-open {
@@ -87,18 +70,6 @@
     transform: translateY(-10px);
     width: 100%;
     animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-.arrow-closed {
-    img {
-        transform: rotate(0deg);
-    }
-}
-
-.arrow-open {
-    img {
-        transform: rotate(180deg);
-    }
 }
 
 .box-open:hover {

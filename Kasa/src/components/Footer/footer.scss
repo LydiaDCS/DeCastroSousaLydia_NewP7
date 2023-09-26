@@ -7,17 +7,14 @@
     color: #fff;
     width: 100%;
     margin-top: auto;
-    h1 {
+    .kasaLogoFooter {
+        padding-top: 30px;
+        width: auto;
+        height: 40px;
         display: flex;
         flex-direction: row;
         letter-spacing: 10%;
         color: #fff;
-        .kasaLogoFooter {
-            filter: brightness(100);
-            padding-top: 20px;
-            width: auto;
-            height: 40px;
-        }
     }
     p {
         font-size: 15px;

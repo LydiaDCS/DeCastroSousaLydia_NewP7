@@ -6,9 +6,6 @@ import nextIcon from '../../../assets/next.svg';
 /**
 La fonction Carousel affiche une galerie d'images sous forme de carrousel
 Il utilise le hook "useState" pour stocker l'index de l'image courante, initialisé à 0. Deux fonctions "nextImage" et "prevImage" sont définies pour gérer le passage à l'image suivante et à l'image précédente respectivement.
-@param {Object} props Propriétés du composant.
-@param {Array} props.images Tableau d'images.
-@returns Le composant Carousel
 */
 function Carousel({ images }) {
 

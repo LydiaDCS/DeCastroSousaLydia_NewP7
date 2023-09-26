@@ -1,14 +1,16 @@
-import bannerImage from '../../assets/aboutBanner.png';
+import aboutBannerImage from '../../assets/aboutBanner.png';
 import Collapse from '../../components/common/collapse/collapse';
 import './about.scss'
+
+// La fonction About est un composant React qui represente la page A propos de l'application.
 
 function About() {
   return (
     <main className='about'>
       <section className="Banner">
-        <img src={bannerImage} alt="Montagne" />
+        <img src={aboutBannerImage} alt="Montagne" />
       </section>
-      <section className='collapsModule'>
+      <section className='collapseComposant'>
         <Collapse title="Fiabilité">
           <p>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.</p>
         </Collapse>
