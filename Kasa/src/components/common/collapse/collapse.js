@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './collapse.scss';
-import arrow from '../../../assets/prev.svg';
+import arrow from '../../../assets/precedent.svg';
 
 // La fonction Collapse est un composant qui représente une section de texte qui peut être réduite ou agrandie en cliquant sur un bouton (ici arrow).
 

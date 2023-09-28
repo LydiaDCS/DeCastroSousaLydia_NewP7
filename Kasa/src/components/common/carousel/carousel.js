@@ -1,48 +1,46 @@
 import React, { useState } from 'react';
 import './carousel.scss';
-import prevIcon from '../../../assets/prev.svg';
-import nextIcon from '../../../assets/next.svg';
+import precedentIcon from '../../../assets/precedent.svg';
+import suivantIcon from '../../../assets/suivant.svg';
 
-/**
-La fonction Carousel affiche une galerie d'images sous forme de carrousel
-Il utilise le hook "useState" pour stocker l'index de l'image courante, initialisé à 0. Deux fonctions "nextImage" et "prevImage" sont définies pour gérer le passage à l'image suivante et à l'image précédente respectivement.
-*/
+// La fonction Carousel affiche une galerie d'images sous forme de carrousel
+
 function Carousel({ images }) {
 
-  // Déclaration d'un état local pour stocker l'indice de l'image actuellement affichée
+  // Déclaration d'un état local pour stocker l'indice de l'image actuellement affichée, qui est initialisé à 0.
   const [currentImageIndex, setcurrentImageIndex] = useState(0);
 
   // Fonction pour afficher l'image suivante dans le carrousel
-  const nextImage = () => {
+  const suivanteImage = () => {
 
     // Si on est arrivé à la fin du tableau, on retourne à l'indice 0, sinon on incrémente simplement l'indice de 1
     setcurrentImageIndex(currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1);
   };
 
   // Fonction pour afficher l'image précédente dans le carrousel
-  const prevImage = () => {
+  const precedenteImage = () => {
 
     // Si on est au début du tableau, on retourne à l'indice de la dernière image, sinon on décrémente simplement l'indice de 1
     setcurrentImageIndex(currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1);
   };
 
-  // Retourne l'interface utilisateur du carrousel, composée d'un conteneur, d'une image principale et de boutons pour passer à l'image suivante ou précédente (s'il y a plus d'une image)
+  //Condition s'il y a plus d'une image alors affichage des buttons precedent et suivant pour defiler les images
+
   return (
     <div className="carousel">
       {images.length > 1 && (
-        <button className="carousel-button carousel-button-prev" onClick={prevImage}>
-          <img src={prevIcon} alt="previous" />
+        <button className="carousel-button precedent" onClick={precedenteImage}>
+          <img src={precedentIcon} alt="precedent" />
         </button>
       )}
-      <img src={images[currentImageIndex]} alt="carousel-img" />
+      <img src={images[currentImageIndex]} alt="carousel-images" />
       {images.length > 1 && (
-        <button className="carousel-button carousel-button-next" onClick={nextImage}>
-          <img src={nextIcon} alt="next" />
+        <button className="carousel-button suivant" onClick={suivanteImage}>
+          <img src={suivantIcon} alt="suivant" />
         </button>
       )}
     </div>
   );
 }
 
-// Exporte le composant pour pouvoir être utilisé ailleurs
 export default Carousel;
