@@ -9,7 +9,7 @@ import Header from './components/Header/header';
 import Error from './pages/Error/error';
 import Footer from './components/Footer/footer';
 import About from './pages/About/about';
-import CardDetails from './components/common/cardDetails/cardDetails'
+import CardDetails from './pages/CardDetails/cardDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

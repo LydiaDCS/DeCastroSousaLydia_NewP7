@@ -5,7 +5,7 @@ import './renderStars.scss';
 
 // La fonction renderStars affiche le nombre d'étoiles sur 5 des hôtes des appartements.
 
-export default function renderStars(rating) {
+function renderStars(rating) {
   //Tableau pour stocker les etoiles
   const starsArray = [];
   //boucle pour iterer sur le nombre d'etoiles
@@ -20,3 +20,4 @@ export default function renderStars(rating) {
   }
   return starsArray;
 }
+export default renderStars

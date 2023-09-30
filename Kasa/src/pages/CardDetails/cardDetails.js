@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import dataCards from "../../../data/data.json";
+import dataCards from "../../data/data.json";
 import './cardDetails.scss';
-import renderStars from "../renderStars/renderStars";
-import Carousel from "../carousel/carousel";
-import Collapse from "../collapse/collapse";
+import renderStars from "../../components/common/renderStars/renderStars";
+import Carousel from "../../components/common/carousel/carousel";
+import Collapse from "../../components/common/collapse/collapse";
 import { useParams, useNavigate } from 'react-router-dom';
-
 
 
 // La fonction CardsDetails affiche les détails d'une carte de location de manière détaillée.
