@@ -12,7 +12,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 function CardsDetails() {
   // Récupère l'ID du logement à afficher à partir de l'URL
   const { id } = useParams();
-
   // Recherche les informations du logement correspondant dans `dataCards`
   const logement = dataCards.find((logement) => logement.id === id);
 
