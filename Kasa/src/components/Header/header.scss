@@ -38,5 +38,15 @@
             height: 3em;
             width: auto;
         }
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: -10px;
+        }
+        .navigationLink_links {
+            font-size: 14px;
+            padding: 3;
+        }
     }
 }
