@@ -1,4 +1,5 @@
 .carousel {
+    position: relative;
     display: flex;
     position: relative;
     height: 415px;
@@ -6,6 +7,7 @@
     border-radius: 25px;
     overflow: hidden;
     img {
+        position: relative;
         display: flex;
         position: absolute;
         top: 50%;
@@ -20,6 +22,14 @@
         background-color: transparent;
         min-width: 30px;
         min-height: 40px;
+    }
+    .number {
+        position: absolute;
+        color: white;
+        font-size: 500;
+        font-weight: bold;
+        bottom: 25px;
+        padding-left: 50%;
     }
 }
 

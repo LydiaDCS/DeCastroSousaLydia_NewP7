@@ -37,6 +37,7 @@ function Carousel({ images }) {
           <img src={suivantIcon} alt="suivant" />
         </button>
       )}
+      <p className='number'>{currentImageIndex + 1}/{images.length}</p>
     </div>
   );
 }

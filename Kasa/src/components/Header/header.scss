@@ -27,11 +27,8 @@
             font-size: 24px;
             font-weight: 500;
             letter-spacing: 0em;
-            &:hover {
-                border-bottom: 2px solid #FF6060;
-            }
-            .active-link {
-                border-bottom: 2px solid #FF6060;
+            &:focus {
+                text-decoration: underline;
             }
         }
     }
